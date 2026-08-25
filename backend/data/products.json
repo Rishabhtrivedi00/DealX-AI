@@ -1,0 +1,382 @@
+[
+  {
+    "product_id": "P001",
+    "name": "SoundMax Pro Wireless Headphones",
+    "brand": "SoundMax",
+    "barcode": "8901234567890",
+    "category": "headphones",
+    "price": 2500,
+    "currency": "INR",
+    "specifications": {
+      "battery": "40 hours",
+      "weight": "250g",
+      "noise_cancellation": "No",
+      "microphone": "Built-in"
+    }
+  },
+  {
+    "product_id": "P002",
+    "name": "AudioBeat ANC Wireless Headphones",
+    "brand": "AudioBeat",
+    "barcode": "8901234567891",
+    "category": "headphones",
+    "price": 3200,
+    "currency": "INR",
+    "specifications": {
+      "battery": "35 hours",
+      "weight": "280g",
+      "noise_cancellation": "Yes",
+      "microphone": "Built-in"
+    }
+  },
+  {
+    "product_id": "P003",
+    "name": "EchoWave Studio Wireless Headphones",
+    "brand": "EchoWave",
+    "barcode": "8901234567892",
+    "category": "headphones",
+    "price": 2800,
+    "currency": "INR",
+    "specifications": {
+      "battery": "45 hours",
+      "weight": "265g",
+      "noise_cancellation": "Yes",
+      "microphone": "Built-in"
+    }
+  },
+  {
+    "product_id": "P004",
+    "name": "BassCore X1 Wireless Headphones",
+    "brand": "BassCore",
+    "barcode": "8901234567893",
+    "category": "headphones",
+    "price": 2200,
+    "currency": "INR",
+    "specifications": {
+      "battery": "30 hours",
+      "weight": "235g",
+      "noise_cancellation": "No",
+      "microphone": "Built-in"
+    }
+  },
+  {
+    "product_id": "P005",
+    "name": "QuietZone Elite Headphones",
+    "brand": "QuietZone",
+    "barcode": "8901234567894",
+    "category": "headphones",
+    "price": 4500,
+    "currency": "INR",
+    "specifications": {
+      "battery": "38 hours",
+      "weight": "290g",
+      "noise_cancellation": "Yes",
+      "microphone": "Dual microphone"
+    }
+  },
+  {
+    "product_id": "P006",
+    "name": "TypePro Mechanical Keyboard",
+    "brand": "TypePro",
+    "barcode": "8901234567895",
+    "category": "keyboards",
+    "price": 3500,
+    "currency": "INR",
+    "specifications": {
+      "switch_type": "Mechanical Blue",
+      "connection": "USB",
+      "backlight": "RGB",
+      "layout": "Full-size"
+    }
+  },
+  {
+    "product_id": "P007",
+    "name": "KeyForge Compact Mechanical Keyboard",
+    "brand": "KeyForge",
+    "barcode": "8901234567896",
+    "category": "keyboards",
+    "price": 2800,
+    "currency": "INR",
+    "specifications": {
+      "switch_type": "Mechanical Red",
+      "connection": "USB-C",
+      "backlight": "RGB",
+      "layout": "75%"
+    }
+  },
+  {
+    "product_id": "P008",
+    "name": "OfficeType Wireless Keyboard",
+    "brand": "OfficeType",
+    "barcode": "8901234567897",
+    "category": "keyboards",
+    "price": 1600,
+    "currency": "INR",
+    "specifications": {
+      "switch_type": "Membrane",
+      "connection": "Wireless",
+      "backlight": "No",
+      "layout": "Full-size"
+    }
+  },
+  {
+    "product_id": "P009",
+    "name": "GameKeys Pro RGB Keyboard",
+    "brand": "GameKeys",
+    "barcode": "8901234567898",
+    "category": "keyboards",
+    "price": 4200,
+    "currency": "INR",
+    "specifications": {
+      "switch_type": "Mechanical Brown",
+      "connection": "USB-C",
+      "backlight": "RGB",
+      "layout": "Full-size"
+    }
+  },
+  {
+    "product_id": "P010",
+    "name": "SwiftClick Wireless Mouse",
+    "brand": "SwiftClick",
+    "barcode": "8901234567899",
+    "category": "mouse",
+    "price": 1200,
+    "currency": "INR",
+    "specifications": {
+      "dpi": "16000 DPI",
+      "connection": "Wireless",
+      "buttons": "6",
+      "battery": "70 hours"
+    }
+  },
+  {
+    "product_id": "P011",
+    "name": "PrecisionPro Gaming Mouse",
+    "brand": "PrecisionPro",
+    "barcode": "8901234567900",
+    "category": "mouse",
+    "price": 1800,
+    "currency": "INR",
+    "specifications": {
+      "dpi": "20000 DPI",
+      "connection": "USB",
+      "buttons": "8",
+      "battery": "Wired"
+    }
+  },
+  {
+    "product_id": "P012",
+    "name": "OfficeGlide Silent Mouse",
+    "brand": "OfficeGlide",
+    "barcode": "8901234567901",
+    "category": "mouse",
+    "price": 900,
+    "currency": "INR",
+    "specifications": {
+      "dpi": "3200 DPI",
+      "connection": "Wireless",
+      "buttons": "5",
+      "battery": "120 hours"
+    }
+  },
+  {
+    "product_id": "P013",
+    "name": "HyperTrack RGB Gaming Mouse",
+    "brand": "HyperTrack",
+    "barcode": "8901234567902",
+    "category": "mouse",
+    "price": 2400,
+    "currency": "INR",
+    "specifications": {
+      "dpi": "26000 DPI",
+      "connection": "Wireless",
+      "buttons": "8",
+      "battery": "90 hours"
+    }
+  },
+  {
+    "product_id": "P014",
+    "name": "NovaOne 5G Smartphone",
+    "brand": "Nova",
+    "barcode": "8901234567903",
+    "category": "smartphones",
+    "price": 15999,
+    "currency": "INR",
+    "specifications": {
+      "display": "6.6 inch AMOLED",
+      "ram": "8GB",
+      "storage": "128GB",
+      "battery": "5000mAh",
+      "camera": "50MP"
+    }
+  },
+  {
+    "product_id": "P015",
+    "name": "PixelEdge Pro 5G Smartphone",
+    "brand": "PixelEdge",
+    "barcode": "8901234567904",
+    "category": "smartphones",
+    "price": 21999,
+    "currency": "INR",
+    "specifications": {
+      "display": "6.7 inch AMOLED",
+      "ram": "8GB",
+      "storage": "256GB",
+      "battery": "5100mAh",
+      "camera": "64MP"
+    }
+  },
+  {
+    "product_id": "P016",
+    "name": "ZenMobile Lite 5G",
+    "brand": "ZenMobile",
+    "barcode": "8901234567905",
+    "category": "smartphones",
+    "price": 12999,
+    "currency": "INR",
+    "specifications": {
+      "display": "6.5 inch LCD",
+      "ram": "6GB",
+      "storage": "128GB",
+      "battery": "5000mAh",
+      "camera": "50MP"
+    }
+  },
+  {
+    "product_id": "P017",
+    "name": "Titan X Performance 5G",
+    "brand": "Titan",
+    "barcode": "8901234567906",
+    "category": "smartphones",
+    "price": 27999,
+    "currency": "INR",
+    "specifications": {
+      "display": "6.8 inch AMOLED",
+      "ram": "12GB",
+      "storage": "256GB",
+      "battery": "5500mAh",
+      "camera": "108MP"
+    }
+  },
+  {
+    "product_id": "P018",
+    "name": "SmartView S1 Smartphone",
+    "brand": "SmartView",
+    "barcode": "8901234567907",
+    "category": "smartphones",
+    "price": 18999,
+    "currency": "INR",
+    "specifications": {
+      "display": "6.5 inch OLED",
+      "ram": "8GB",
+      "storage": "128GB",
+      "battery": "4800mAh",
+      "camera": "50MP"
+    }
+  },
+  {
+    "product_id": "P019",
+    "name": "BoomBox Mini Bluetooth Speaker",
+    "brand": "BoomBox",
+    "barcode": "8901234567908",
+    "category": "speakers",
+    "price": 1800,
+    "currency": "INR",
+    "specifications": {
+      "battery": "12 hours",
+      "power": "20W",
+      "water_resistance": "IPX5",
+      "connection": "Bluetooth 5.3"
+    }
+  },
+  {
+    "product_id": "P020",
+    "name": "SoundSphere Portable Speaker",
+    "brand": "SoundSphere",
+    "barcode": "8901234567909",
+    "category": "speakers",
+    "price": 2600,
+    "currency": "INR",
+    "specifications": {
+      "battery": "18 hours",
+      "power": "30W",
+      "water_resistance": "IPX7",
+      "connection": "Bluetooth 5.3"
+    }
+  },
+  {
+    "product_id": "P021",
+    "name": "BassPulse Party Speaker",
+    "brand": "BassPulse",
+    "barcode": "8901234567910",
+    "category": "speakers",
+    "price": 4800,
+    "currency": "INR",
+    "specifications": {
+      "battery": "10 hours",
+      "power": "60W",
+      "water_resistance": "IPX4",
+      "connection": "Bluetooth 5.2"
+    }
+  },
+  {
+    "product_id": "P022",
+    "name": "PocketSound Bluetooth Speaker",
+    "brand": "PocketSound",
+    "barcode": "8901234567911",
+    "category": "speakers",
+    "price": 1100,
+    "currency": "INR",
+    "specifications": {
+      "battery": "15 hours",
+      "power": "12W",
+      "water_resistance": "IPX5",
+      "connection": "Bluetooth 5.0"
+    }
+  },
+  {
+    "product_id": "P023",
+    "name": "FitPulse Active Smartwatch",
+    "brand": "FitPulse",
+    "barcode": "8901234567912",
+    "category": "smartwatches",
+    "price": 2999,
+    "currency": "INR",
+    "specifications": {
+      "display": "1.8 inch AMOLED",
+      "battery": "10 days",
+      "water_resistance": "5 ATM",
+      "gps": "Built-in"
+    }
+  },
+  {
+    "product_id": "P024",
+    "name": "WatchPro Connect Smartwatch",
+    "brand": "WatchPro",
+    "barcode": "8901234567913",
+    "category": "smartwatches",
+    "price": 4499,
+    "currency": "INR",
+    "specifications": {
+      "display": "1.9 inch AMOLED",
+      "battery": "7 days",
+      "water_resistance": "IP68",
+      "gps": "Built-in"
+    }
+  },
+  {
+    "product_id": "P025",
+    "name": "ActiveTrack Lite Smartwatch",
+    "brand": "ActiveTrack",
+    "barcode": "8901234567914",
+    "category": "smartwatches",
+    "price": 2199,
+    "currency": "INR",
+    "specifications": {
+      "display": "1.7 inch LCD",
+      "battery": "12 days",
+      "water_resistance": "IP68",
+      "gps": "Connected GPS"
+    }
+  }
+]

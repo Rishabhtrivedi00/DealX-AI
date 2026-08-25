@@ -1,0 +1,33 @@
+[
+  {
+    "product_id": "P001",
+    "platform": "Amazon",
+    "price": 4299,
+    "offer": "10% bank offer"
+  },
+  {
+    "product_id": "P001",
+    "platform": "Flipkart",
+    "price": 4199,
+    "offer": "₹200 coupon"
+  },
+  {
+    "product_id": "P001",
+    "platform": "Croma",
+    "price": 4399,
+    "offer": "No offer"
+  },
+  {
+    "product_id": "P002",
+    "platform": "Amazon",
+    "price": 5999,
+    "offer": "5% bank offer"
+  },
+  {
+    "product_id": "P002",
+    "platform": "Flipkart",
+    "price": 5799,
+    "offer": "₹300 coupon"
+  }
+  
+]

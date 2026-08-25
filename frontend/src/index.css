@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #24312d;
+  background: #e8ebe4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #24312d;
+  --muted: #69746d;
+  --line: #d6ddd3;
+  --paper: #f8f9f5;
+  --sage: #315f50;
+  --sage-dark: #24483d;
+  --sage-pale: #e0ebe3;
+  --coral: #b8684f;
+  --shadow: 0 18px 45px rgba(37, 55, 45, 0.09);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #e8ebe4;
+  background-image: radial-gradient(rgba(36, 49, 45, 0.07) 0.7px, transparent 0.7px);
+  background-size: 8px 8px;
+}
+button, input, textarea { font: inherit; }
+button { border: 0; cursor: pointer; transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease; }
+button:hover:not(:disabled) { transform: translateY(-1px); }
+button:disabled { cursor: not-allowed; opacity: 0.55; }
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid rgba(49, 95, 80, 0.25); outline-offset: 2px; }
+
+.app { min-height: 100vh; }
+.header { position: relative; overflow: hidden; padding: 56px 24px 62px; color: #f8f9f5; background: var(--sage-dark); }
+.header::after { position: absolute; right: -70px; bottom: -150px; width: 440px; height: 300px; border: 1px solid rgba(248, 249, 245, 0.16); border-radius: 50%; content: ''; transform: rotate(-16deg); }
+.header h1, .header p { position: relative; z-index: 1; max-width: 1080px; margin-inline: auto; }
+.header h1 { font-family: 'Fraunces', Georgia, serif; font-size: 4rem; font-weight: 500; letter-spacing: 0; }
+.header p { margin-top: 10px; color: #cbd9cf; font-size: 0.95rem; letter-spacing: 0.04em; }
+.container { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 36px; }
+
+.search-card, .scanner-card, .product-card, .summary-card, .question-card, .answer-card { width: 100%; border: 1px solid var(--line); border-radius: 8px; background: rgba(248, 249, 245, 0.94); box-shadow: var(--shadow); }
+.search-card { padding: 34px; }
+.search-card h2, .question-card h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.85rem; font-weight: 500; }
+.subtitle { margin-top: 8px; color: var(--muted); font-size: 0.92rem; }
+.search-row { display: flex; gap: 10px; margin-top: 25px; }
+.search-row input, .question-card textarea { border: 1px solid #cfd8cf; border-radius: 5px; background: #fff; color: var(--ink); outline: none; }
+.search-row input { min-width: 0; flex: 1; height: 50px; padding: 0 15px; }
+.search-row input:focus, .question-card textarea:focus { border-color: var(--sage); box-shadow: 0 0 0 3px rgba(49, 95, 80, 0.1); }
+.find-button, .ask-button { padding: 0 22px; border-radius: 5px; background: var(--sage); color: white; font-weight: 600; }
+.find-button { min-width: 142px; }
+.find-button:hover:not(:disabled), .ask-button:hover:not(:disabled) { background: var(--sage-dark); box-shadow: 0 7px 16px rgba(36, 72, 61, 0.18); }
+.scan-button { width: 100%; height: 46px; margin-top: 12px; border: 1px solid #b8cdbd; border-radius: 5px; background: var(--sage-pale); color: var(--sage-dark); font-weight: 600; }
+.scan-button:hover:not(:disabled) { background: #d2e2d6; }
+
+.scanner-card { margin-top: 18px; padding: 22px; text-align: center; }
+#reader { width: 100%; max-width: 520px; margin: 0 auto; overflow: hidden; border-radius: 5px; }
+.stop-button { margin-top: 16px; padding: 10px 18px; border-radius: 5px; background: #f1ddd7; color: #8e493a; font-weight: 600; }
+.error-message { margin-top: 16px; padding: 13px 16px; border-left: 3px solid var(--coral); background: #f8e8e2; color: #7b4135; font-size: 0.9rem; }
+
+.product-card { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 26px; align-items: start; margin-top: 18px; padding: 26px; }
+.product-image, .product-icon { width: 140px; height: 140px; border: 1px solid var(--line); border-radius: 5px; background: #edf1eb; }
+.product-image { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.product-image img { width: 100%; height: 100%; padding: 10px; object-fit: contain; }
+.product-icon { display: grid; place-items: center; color: var(--sage); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-align: center; }
+.product-icon::before { display: block; content: 'PRODUCT'; }
+.product-info { min-width: 0; }
+.product-label { display: inline-block; color: var(--sage); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; }
+.product-info h2 { margin-top: 9px; color: var(--ink); font-family: 'Fraunces', Georgia, serif; font-size: 1.8rem; font-weight: 500; line-height: 1.15; }
+.product-info p { margin-top: 8px; color: var(--muted); line-height: 1.45; }
+.product-info strong { color: var(--ink); font-weight: 600; }
+.product-description { margin-top: 17px !important; padding-top: 14px; border-top: 1px solid var(--line); line-height: 1.7 !important; }
+
+.summary-card, .question-card, .answer-card { margin-top: 18px; padding: 26px; }
+.answer-header { display: flex; align-items: center; gap: 11px; }
+.answer-header span { display: inline-grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; background: var(--sage-pale); color: var(--sage); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em; }
+.answer-header h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.45rem; font-weight: 500; }
+.summary-content, .answer-content { margin-top: 18px; padding: 19px; border: 1px solid var(--line); border-radius: 5px; background: #fff; }
+.summary-content p, .answer-content p { color: #52605a; line-height: 1.65; }
+.overall-section h3, .pros-box h3, .cons-box h3, .verdict-box h3 { margin-bottom: 8px; color: var(--ink); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.pros-cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.pros-box, .cons-box, .verdict-box { padding: 16px; border: 1px solid var(--line); border-radius: 5px; }
+.pros-box { background: #f0f6f1; }
+.cons-box { background: #fbf1ed; }
+.verdict-box { margin-top: 12px; background: #f5f2e8; }
+.pros-box h3 { color: var(--sage); }
+.cons-box h3 { color: var(--coral); }
+.pros-box ul, .cons-box ul { display: grid; gap: 8px; list-style: none; }
+.pros-box li, .cons-box li { display: grid; grid-template-columns: 15px 1fr; gap: 7px; color: #52605a; font-size: 0.9rem; line-height: 1.45; }
+.pros-box li span:first-child { color: var(--sage); font-weight: 700; }
+.cons-box li span:first-child { color: var(--coral); font-weight: 700; }
+.summary-loading { display: flex; align-items: center; gap: 10px; margin-top: 17px; color: var(--muted); font-size: 0.9rem; }
+.loading-spinner { width: 15px; height: 15px; border: 2px solid #c9d9cc; border-top-color: var(--sage); border-radius: 50%; animation: spin 800ms linear infinite; }
+.question-card textarea { width: 100%; min-height: 115px; margin-top: 20px; padding: 14px; resize: vertical; line-height: 1.5; }
+.ask-button { height: 44px; margin-top: 12px; }
+.answer-card { border-left: 3px solid var(--sage); }
+.answer-content p { margin-bottom: 9px; white-space: pre-wrap; }
+.answer-content p:last-child { margin-bottom: 0; }
+footer { padding: 30px 0 5px; color: #7c8980; font-size: 0.78rem; text-align: center; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 620px) {
+  .container { width: calc(100% - 24px); padding-top: 24px; }
+  .header { padding: 40px 18px 45px; }
+  .header h1 { font-size: 2.4rem; }
+  .search-card, .scanner-card, .product-card, .summary-card, .question-card, .answer-card { padding: 20px; }
+  .search-row { flex-direction: column; }
+  .find-button { min-height: 46px; }
+  .product-card { grid-template-columns: 88px minmax(0, 1fr); gap: 16px; }
+  .product-image, .product-icon { width: 88px; height: 88px; }
+  .product-info h2 { font-size: 1.4rem; }
+  .pros-cons-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 430px) {
+  .product-card { grid-template-columns: 1fr; text-align: center; }
+  .product-image, .product-icon { margin-inline: auto; }
+  .product-info h2 { font-size: 1.65rem; }
+}

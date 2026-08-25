@@ -1,0 +1,28 @@
+[
+  {
+    "product_id": "P001",
+    "barcode": "8901234567890",
+    "name": "Sony WH-CH520",
+    "brand": "Sony",
+    "category": "Headphones",
+    "description": "Wireless Bluetooth headphones with long battery life.",
+    "specifications": {
+      "battery": "50 hours",
+      "connectivity": "Bluetooth",
+      "weight": "147g"
+    }
+  },
+  {
+    "product_id": "P002",
+    "barcode": "8901234567891",
+    "name": "JBL Tune 760NC",
+    "brand": "JBL",
+    "category": "Headphones",
+    "description": "Wireless noise cancelling headphones.",
+    "specifications": {
+      "battery": "50 hours",
+      "connectivity": "Bluetooth",
+      "noise_cancellation": "Yes"
+    }
+  }
+]

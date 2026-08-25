@@ -1,0 +1,22 @@
+[
+  {
+    "barcode": "0885909950805",
+    "rating": 5,
+    "review": "The phone is compact and easy to use. The camera takes good photos in normal lighting. The phone feels premium and is comfortable to hold."
+  },
+  {
+    "barcode": "0885909950805",
+    "rating": 4,
+    "review": "The design is good and the phone is easy to handle. Performance is fine for basic everyday tasks, but newer apps can feel slow."
+  },
+  {
+    "barcode": "0885909950805",
+    "rating": 3,
+    "review": "The battery does not last very long compared with newer phones. Performance can be slow when several apps are running."
+  },
+  {
+    "barcode": "0885909950805",
+    "rating": 4,
+    "review": "Good build quality and comfortable size. The camera is decent, but battery life is a weakness."
+  }
+]

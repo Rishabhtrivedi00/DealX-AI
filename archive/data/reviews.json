@@ -1,0 +1,34 @@
+
+
+[
+  {
+    "product_id": "P001",
+    "rating": 5,
+    "review": "The battery life is excellent and the headphones are very comfortable. Sound quality is good for the price."
+  },
+  {
+    "product_id": "P001",
+    "rating": 3,
+    "review": "The microphone quality is average during calls. The plastic build also feels a little cheap."
+  },
+  {
+    "product_id": "P001",
+    "rating": 4,
+    "review": "Very comfortable for long listening sessions. Battery easily lasts several days."
+  },
+  {
+    "product_id": "P002",
+    "rating": 5,
+    "review": "Noise cancellation works well and the sound quality is very good."
+  },
+  {
+    "product_id": "P002",
+    "rating": 4,
+    "review": "Battery backup is excellent. The headphones are slightly heavy but comfortable overall."
+  },
+  {
+    "product_id": "P002",
+    "rating": 3,
+    "review": "The microphone could be better for phone calls."
+  }
+]
