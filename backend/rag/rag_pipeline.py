@@ -5,8 +5,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 from groq import Groq
 
-from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
 
 
 # ============================================================
@@ -38,24 +36,27 @@ client = Groq(
 )
 
 
-# ============================================================
-# 4. HUGGING FACE EMBEDDINGS
-# ============================================================
-
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+vector_store = None
 
 
-# ============================================================
-# 5. CHROMADB
-# ============================================================
+def get_vector_store():
 
-vector_store = Chroma(
-    collection_name="dealx_reviews",
-    embedding_function=embeddings,
-    persist_directory=str(CHROMA_DIR)
-)
+    global vector_store
+
+    if vector_store is None:
+        from langchain_chroma import Chroma
+        from langchain_huggingface import HuggingFaceEmbeddings
+
+        embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        )
+        vector_store = Chroma(
+            collection_name="dealx_reviews",
+            embedding_function=embeddings,
+            persist_directory=str(CHROMA_DIR)
+        )
+
+    return vector_store
 
 
 def load_local_reviews(product_id):
@@ -129,7 +130,7 @@ def ask_product(product_id, query):
     # Retrieve relevant reviews
     # --------------------------------------------------------
 
-    results = vector_store.similarity_search(
+    results = get_vector_store().similarity_search(
         query,
         k=4,
         filter={

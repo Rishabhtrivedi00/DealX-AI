@@ -87,6 +87,33 @@ hostname for API requests.
 Camera access on phones requires a secure context. Use `localhost` for local
 desktop testing, or serve the Vite app over HTTPS when testing from a phone.
 
+## Deploy to Netlify
+
+Netlify hosts the Vite frontend. Deploy the FastAPI backend separately using a
+Python-capable host, then configure the frontend to use its public HTTPS URL.
+
+1. Create a new site in Netlify from this repository. Netlify reads the
+	repository's `netlify.toml` and builds the `frontend/` directory.
+	Leave **Base directory** and **Package directory** blank.
+2. In **Site configuration > Environment variables**, add
+	`VITE_API_URL` with the public HTTPS URL of the separately deployed FastAPI
+	backend, for example `https://your-backend.example.com`. Do not use the
+	Netlify frontend URL with port `8000`.
+3. Redeploy the site after adding the variable.
+4. On the backend host, set `FRONTEND_URL` to the Netlify site URL, such as
+	`https://your-site.netlify.app`, and set `GROQ_API_KEY`.
+
+The frontend build can be tested locally with:
+
+```powershell
+cd frontend
+$env:VITE_API_URL = "https://your-backend.example.com"
+npm run build
+```
+
+Do not put `GROQ_API_KEY` in Netlify variables or any `VITE_*` variable;
+`VITE_*` values are exposed to the browser.
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
@@ -161,6 +188,7 @@ npm run preview   # Preview the production build
 
 - Local products are loaded from `backend/data/products.json`.
 - Review-based answers depend on matching documents in the existing `chroma_db` store.
+- The backend loads the embedding model only when vector-based review retrieval is needed; this keeps startup within Render Free tier memory limits.
 - External product lookup requires network access and may return no result for an unknown barcode.
 - Camera scanning requires browser permission and works best over a secure context or localhost.
 - Do not commit `backend/.env` or expose the Groq API key in frontend code.
