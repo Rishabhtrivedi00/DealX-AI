@@ -97,11 +97,14 @@ Python-capable host, then configure the frontend to use its public HTTPS URL.
 	Leave **Base directory** and **Package directory** blank.
 2. In **Site configuration > Environment variables**, add
 	`VITE_API_URL` with the public HTTPS URL of the separately deployed FastAPI
-	backend, for example `https://your-backend.example.com`. Do not use the
+	backend, for example `https://your-backend.example.com` (without a trailing
+	slash). Do not use the
 	Netlify frontend URL with port `8000`.
 3. Redeploy the site after adding the variable.
 4. On the backend host, set `FRONTEND_URL` to the Netlify site URL, such as
-	`https://your-site.netlify.app`, and set `GROQ_API_KEY`.
+	`https://your-site.netlify.app`, and set `GROQ_API_KEY`. The backend also
+	allows Netlify deploy-preview subdomains; redeploy the backend after changing
+	this configuration.
 
 The frontend build can be tested locally with:
 

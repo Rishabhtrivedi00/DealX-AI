@@ -7,8 +7,12 @@ import {
 import "./index.css";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL ||
-  `http://${window.location.hostname}:8000`;
+  import.meta.env.VITE_API_URL?.replace(/\/+$/, "") ||
+  (import.meta.env.DEV ? `http://${window.location.hostname}:8000` : "");
+
+if (window.location.protocol === "https:" && API_BASE_URL.startsWith("http:")) {
+  throw new Error("VITE_API_URL must use HTTPS when the frontend uses HTTPS.");
+}
 
 function App() {
   // ============================================================
