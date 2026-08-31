@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
   Html5Qrcode,
+  Html5QrcodeScannerState,
   Html5QrcodeSupportedFormats,
 } from "html5-qrcode";
 import "./index.css";
@@ -35,6 +36,46 @@ function App() {
   const [scannerOpen, setScannerOpen] = useState(false);
 
   const scannerRef = useRef(null);
+  const scannerStopRef = useRef(null);
+
+  const stopScannerInstance = (scanner) => {
+    if (!scanner) {
+      return Promise.resolve();
+    }
+
+    if (scannerStopRef.current?.scanner === scanner) {
+      return scannerStopRef.current.promise;
+    }
+
+    const promise = (async () => {
+      try {
+        const state = scanner.getState();
+        if (
+          state === Html5QrcodeScannerState.SCANNING ||
+          state === Html5QrcodeScannerState.PAUSED
+        ) {
+          await scanner.stop();
+        }
+      } catch (error) {
+        console.log("Scanner was already stopped.");
+      }
+
+      try {
+        await scanner.clear();
+      } catch (error) {
+        console.log("Scanner was already cleared.");
+      }
+    })();
+
+    scannerStopRef.current = { scanner, promise };
+    promise.finally(() => {
+      if (scannerStopRef.current?.scanner === scanner) {
+        scannerStopRef.current = null;
+      }
+    });
+
+    return promise;
+  };
 
   // ============================================================
   // FIND PRODUCT
@@ -47,6 +88,11 @@ function App() {
       setError("Please enter a barcode.");
       return;
     }
+
+    const scanner = scannerRef.current;
+    scannerRef.current = null;
+    await stopScannerInstance(scanner);
+    setScannerOpen(false);
 
     try {
       setLoadingProduct(true);
@@ -143,25 +189,7 @@ function App() {
     const scanner = scannerRef.current;
     scannerRef.current = null;
 
-    if (scanner) {
-      try {
-        await scanner.stop();
-      } catch (error) {
-        console.log(
-          "Scanner already stopped."
-        );
-      }
-
-      try {
-        await scanner.clear();
-      } catch (error) {
-        console.log(
-          "Scanner already cleared."
-        );
-      }
-
-    }
-
+    await stopScannerInstance(scanner);
     setScannerOpen(false);
   };
 
@@ -219,8 +247,7 @@ function App() {
           setBarcode(decodedText);
 
           scannerRef.current = null;
-          await scanner.stop().catch(() => {});
-          await scanner.clear().catch(() => {});
+          await stopScannerInstance(scanner);
           setScannerOpen(false);
 
           findProduct(decodedText);
@@ -232,7 +259,7 @@ function App() {
       )
       .then(() => {
         if (!active) {
-          scanner.stop().catch(() => {});
+          stopScannerInstance(scanner);
         }
       })
       .catch((error) => {
@@ -259,9 +286,7 @@ function App() {
       if (scannerRef.current === scanner) {
         scannerRef.current = null;
       }
-      scanner.stop().catch(() => {}).finally(() => {
-        scanner.clear().catch(() => {});
-      });
+      stopScannerInstance(scanner);
     };
   }, [scannerOpen]);
 
